@@ -1,0 +1,161 @@
+@keyframes flip {
+    0%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+hr{
+    width: 500px;
+}
+
+#title{
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+#board{
+    width: 350px;
+    height: 420px;
+    background-color: whitesmoke ;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tile{
+    /* Box */
+    border: 2px solid gray;
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+
+    /* Text */
+    color: black;
+    font-size: 30px;
+    font-size: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.correct{
+    background-color: green;
+    color: white;
+    border-color: white;
+    animation: flip 0.5s ease forwards;
+}
+.present{
+    background-color: rgb(255, 197, 26);
+    color: white;
+    border-color: white;
+    animation: flip 0.5s ease forwards;
+}
+
+.absent{
+    background-color: darkgray;
+    color: white;
+    border-color: white;
+    animation: flip 0.5s ease forwards;
+}
+
+/* keyboard */
+#keyboard-container{
+    height: 200px;
+}
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+    touch-action: manipulation;
+}
+
+.keyboard-row button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: rgb(126, 164, 126);
+    color: white;
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button{
+    flex-grow: 0.5;
+}
+
+.spacer-half{
+    flex-grow: 0.5;
+}
+
+.keyboard-row button:hover {background-color:rgba(126, 164, 126, 0.700);}
+
+.keyboard-row button.incorrect-letter:hover {background-color:rgba(128, 128, 128, 0.500);}
+
+.keyboard-row button.present-letter:hover {background-color:rgba(255, 198, 26, 0.700);}
+
+.keyboard-row button.correct-letter:hover {background-color:rgba(0, 128, 0, 0.700);}
+
+.keyboard-row button.incorrect-letter {
+    background-color: darkgray;
+  }
+  
+.keyboard-row button.present-letter {
+    background-color: rgb(255, 197, 26);
+  }
+  
+.keyboard-row button.correct-letter{
+    background-color: green;
+  }
+
+.keyboard-row button.recover{
+    background-color: rgb(126, 164, 126);
+}
+  
+/*
+.alert-container{
+    position: fixed;
+    top: 10vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alert{
+    pointer-events: none;
+    background-color:gray;
+    padding: .75em;
+    border-radius: .25em;
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+    margin-bottom: .5em;
+}
+
+.alert:last-child{
+    margin-bottom: 0;
+}
+
+.alert.hide{
+    opacity: 0;
+} */
